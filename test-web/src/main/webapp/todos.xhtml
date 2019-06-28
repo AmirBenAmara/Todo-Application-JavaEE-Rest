@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	   xmlns:f="http://xmlns.jcp.org/jsf/core"
+	   xmlns:h="http://xmlns.jcp.org/jsf/html"
+	   xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	   xmlns:jsf="http://xmlns.jcp.org/jsf"
+	   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	   xmlns:p="http://primefaces.org/ui">
+	   
+<h:head>
+	<title>todos</title>
+</h:head>
+<h:body>
+	<h2>Todos</h2>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputText value="What do I have to do?" />
+			<h:inputText value="#{todoBean.todo.text}" />
+			<h:commandButton action="#{todoBean.doCreateTodo()}" value="Add" />
+		</h:panelGrid>
+	</h:form>
+	<h3>Already registred todos</h3>
+	<h:dataTable value="#{todoBean.todos}" var="todo">
+		<h:column>
+			<h:outputText value="#{todo.text}" />
+		</h:column>
+	</h:dataTable >
+</h:body>
+</html>

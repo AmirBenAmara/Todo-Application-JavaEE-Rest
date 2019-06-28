@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>test</groupId>
+		<artifactId>test</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>test-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>test</groupId>
+			<artifactId>test-web</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>test</groupId>
+			<artifactId>test-ejb</artifactId>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>${version.ear.plugin}</version>
+				<configuration>
+					<version>7</version>
+					<fileNameMapping>no-version</fileNameMapping>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>${version.wildfly.maven.plugin}</version>
+				<configuration>
+					<filename>${project.artifactId}.ear</filename>
+					<port>19990</port>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

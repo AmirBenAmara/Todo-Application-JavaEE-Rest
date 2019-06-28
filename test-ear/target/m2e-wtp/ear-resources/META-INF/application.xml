@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" version="7">
+  <display-name>test-ear</display-name>
+  <module>
+    <web>
+      <web-uri>test-web.war</web-uri>
+      <context-root>/test-web</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>test-ejb.jar</ejb>
+  </module>
+  <library-directory>lib</library-directory>
+</application>
