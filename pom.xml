@@ -18,7 +18,7 @@
 		<version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
 		<version.wildfly>9.0.1.Final</version.wildfly>
 		<version.hibernate>4.3.10.Final</version.hibernate>
-		<primefaces.version>5.3</primefaces.version>
+		<primefaces.version>6.0</primefaces.version>
 
 		<version.compiler.plugin>3.1</version.compiler.plugin>
 		<version.ear.plugin>2.10</version.ear.plugin>
